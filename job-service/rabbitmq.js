@@ -1,4 +1,4 @@
-const amqp = require('amqplib');
+import amqp from 'amqplib';
 
 const RABBITMQ_URL = process.env.RABBITMQ_URL;
 const QUEUE_NAME = 'media-jobs';
@@ -17,4 +17,4 @@ function getChannel() {
   return channel;
 }
 
-module.exports = { connectRabbitMQ, getChannel, QUEUE_NAME };
+export { connectRabbitMQ, getChannel, QUEUE_NAME };

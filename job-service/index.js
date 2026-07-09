@@ -1,11 +1,11 @@
-require('dotenv').config();
-const express = require('express');
-const { v4: uuidv4 } = require('uuid');
-//const { v4: uuidv4 } = require('uuid');
-//const { v4: uuidv4 } = require('uuid');
-const redis = require('./redis');
-const { connectRabbitMQ, getChannel, QUEUE_NAME } = require('./rabbitmq');
-const cors = require('cors');
+import dotenv from 'dotenv';
+import express from 'express';
+import { v4 as uuidv4 } from 'uuid';
+import redis from './redis.js';
+import { connectRabbitMQ, getChannel, QUEUE_NAME } from './rabbitmq.js';
+import cors from 'cors';
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());

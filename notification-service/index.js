@@ -1,8 +1,10 @@
-require('dotenv').config();
-const express = require('express');
-const http = require('http');
-const { Server } = require('socket.io');
-const amqp = require('amqplib');
+import dotenv from 'dotenv';
+import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
+import amqp from 'amqplib';
+
+dotenv.config();
 
 const RABBITMQ_URL = process.env.RABBITMQ_URL;
 const NOTIFY_QUEUE = 'job-notifications';

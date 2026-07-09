@@ -1,6 +1,8 @@
-require('dotenv').config();
-const amqp = require('amqplib');
-const Redis = require('ioredis');
+import dotenv from 'dotenv';
+import amqp from 'amqplib';
+import Redis from 'ioredis';
+
+dotenv.config();
 
 const RABBITMQ_URL = process.env.RABBITMQ_URL;
 const QUEUE_NAME = 'media-jobs';
@@ -11,7 +13,7 @@ const redis = new Redis({
   port: process.env.REDIS_PORT,
   username: 'default',
   password: process.env.REDIS_PASSWORD,
-  //password: 'gPyTjT06OFJymz0LazQasM1odxJQwgRp',
+  
 });
 
 function simulateWork(jobId) {
